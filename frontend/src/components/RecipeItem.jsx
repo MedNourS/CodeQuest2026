@@ -7,7 +7,7 @@ function RecipeItem({ meal, matchCount, totalSearched, hasAll, ingredients, miss
             <p>
                 {hasAll
                     ? `You have all ingredients!`
-                    : `You have ${matchCount} / ${totalSearched} ingredients`}
+                    : `This recipe has ${matchCount} / ${totalSearched} of your ingredients`}
             </p>
             {missingFromRecipe.length > 0 && (
                 <p>Missing: {missingFromRecipe.join(", ")}</p>

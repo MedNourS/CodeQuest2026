@@ -38,7 +38,7 @@ body {
 }
 
 .logo {
-  width: 260px;
+  width: 300px;
 }
 
 .headerBtn {
@@ -101,7 +101,8 @@ body {
   border: none;
   cursor: pointer;
   font-size: 0.85rem;
-  margin: 0 0 15px;
+  margin: 0 auto 15px;
+  display: block;
 }
 
 .clearBtn:hover {

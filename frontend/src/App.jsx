@@ -6,7 +6,7 @@ import HorizontalLogo from "./assets/Horizontal_Logo.png"
 import SelectedIngredients from './components/SelectedIngredients'
 import IngredientSection from './components/IngredientSection'
 import Utility from './components/Utilitiy'
-import './components/IngredientItem.css'
+
 
 function App() {
   return (

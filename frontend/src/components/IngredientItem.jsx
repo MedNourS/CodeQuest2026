@@ -1,3 +1,5 @@
+import './IngredientItem.css'
+
 function IngredientItem(props) {
   const addToLS = () => {
     const ingredientList = localStorage.getItem('ingredients');

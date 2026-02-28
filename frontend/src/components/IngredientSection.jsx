@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import IngredientItem from "./IngredientItem";
+import "./IngredientSection.css";
 
 function IngredientSection() {
   const numResults = 10;

@@ -13,7 +13,11 @@ function App() {
       <div className="layout">
 
         <header className="header">
-          <img src={HorizontalLogo} alt="Horizontal Logo" className="logo" />
+          <div className="headerLeft"></div>
+              <img src={HorizontalLogo} alt="Horizontal Logo" className="logo" />
+          <div className="headerRight">
+            <button className="headerBtn">Click Me</button>
+      </div>
         </header>
 
         <div className="body">

@@ -2,12 +2,14 @@ import { useEffect, useState } from "react";
 import IngredientItem from "./IngredientItem";
 
 function IngredientSection() {
+  const numResults = 10;
   const [ingredientsList, setIngredientList] = useState([]);
-  const [isLoading, setIsLoading] = useState([]);
+  const [inputValue, setInputValue] = useState("");
 
-  async function fetchFoodList(e) {
+  //Fetches the ingredients
+  async function fetchFoodList(input) {
     const response = await fetch(
-      `https://www.webmd.com/search/2/api/get_food_results?name=${e.target.value}&count=2000`,
+      `https://www.webmd.com/search/2/api/get_food_results?name=${input}&count=2000`,
       {
         method: "GET",
         headers: {
@@ -20,23 +22,49 @@ function IngredientSection() {
     );
 
     const data = await response.json();
-    setIngredientList(data.results.foodItems.slice(0,10))
+
+    //Removes duplicates
+    let foodListIndex = 0;
+    let tempFoodList = [];
+    for(let i = 0; i < numResults;) {
+      const search_string = data.results.foodItems[foodListIndex].search_text_s.split(", ")[0];
+      if(tempFoodList.includes(search_string)){
+        foodListIndex++;
+        continue;
+      }
+      else{
+        console.log(foodListIndex)
+        tempFoodList = [...tempFoodList, search_string];
+        i++;
+      }
+    }
+    setIngredientList(tempFoodList);
     return data;
   }
 
-  // useEffect(() => {
-  //   console.log(fetchFoodList("*"));
-  // }, []);
+
+  //Timer for user input, waits for user to finish typing
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      fetchFoodList(inputValue);
+    }, 200);
+
+    // Cleanup function to clear the previous timeout on every input change
+    return () => {
+      clearTimeout(timeoutId);
+    };
+  }, [inputValue]);
+
+  console.log(typeof(ingredientsList));
 
   return (
     <div>
       <button onClick={() => console.log(fetchFoodList("*"))}>Click for IngredientsList</button>
-      <input type="text" onChange={(e) => fetchFoodList(e)}></input><br/>
+      <input type="text" onChange={(e) => setInputValue(e.target.value)}></input><br/>
       {ingredientsList != undefined ? ingredientsList.map((value, index) => (
           <IngredientItem
             key={index}
-            name={value.search_text_s.split(", ")[0]}
-            detail={value.search_text_s.split(", ").slice(1)}
+            name={value}
           />
         )
       ) : <div></div>}

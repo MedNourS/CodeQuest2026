@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import "./Modal.css"
 import RecipeSection from "./RecipeSection";
 
-function Modal({ isOpen, onClose }) {
+function Modal({ isOpen, onClose, selectedIngredients }) {
   const [closing, setClosing] = useState(false);
 
   // Close on Escape key
@@ -39,7 +39,7 @@ function Modal({ isOpen, onClose }) {
       aria-labelledby="modal-title"
     >
       <div className="modal">
-        <RecipeSection />
+        <RecipeSection selectedIngredients={selectedIngredients}/>
       </div>
     </div>
   );

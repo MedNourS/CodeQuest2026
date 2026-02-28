@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import RecipeItem from "./RecipeItem";
 
-const searchIngredients = JSON.parse(localStorage.getItem("ingredienst") || "[]");
+let searchIngredients = JSON.parse(localStorage.getItem("ingredients") || "[]");
 
 // Delay function
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
@@ -67,13 +67,16 @@ async function fetchSortedRecipes(signal) {
     return (exactMatches.length > 0 ? exactMatches : scored.sort((a, b) => b.ratio - a.ratio)).slice(0, 5);
 }
 
-function RecipeSection() {
+function RecipeSection({selectedIngredients}) {
     const [recipes, setRecipes] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
+    searchIngredients = selectedIngredients;
+
     useEffect(() => {
         const controller = new AbortController();
+        console.log("runs");
         fetchSortedRecipes(controller.signal)
             .then((result) => { setRecipes(result); setLoading(false); })
             .catch((error) => { if (error.name !== "AbortError") { setError(error.message); setLoading(false); } });

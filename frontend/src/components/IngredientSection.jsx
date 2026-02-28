@@ -34,7 +34,6 @@ function IngredientSection(props) {
         continue;
       }
       else{
-        console.log(foodListIndex)
         tempFoodList = [...tempFoodList, search_string];
         i++;
       }
@@ -55,8 +54,6 @@ function IngredientSection(props) {
       clearTimeout(timeoutId);
     };
   }, [inputValue]);
-
-  console.log(typeof(ingredientsList));
 
   return (
     <div className="ingredientSectionWrapper">

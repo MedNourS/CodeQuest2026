@@ -15,7 +15,7 @@ function App() {
 
   return (
     <>
-      <Modal isOpen={isModalOpen} onClose={() => {setIsModalOpen(false)}}/>
+      <Modal isOpen={isModalOpen} onClose={() => {setIsModalOpen(false)}} selectedIngredients={selectedIngredients}/>
       <div className="layout">
       <head>
         <title>MiNY Crave</title>

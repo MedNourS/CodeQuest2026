@@ -1,9 +1,10 @@
 import './IngredientItem.css'
 
-function IngredientItem(props) {
+function IngredientItem(name) {
   return (
     <div className="ingredientItem">
-      <p className="ingredientName">{props.name}</p>
+      <p className="ingredientName">{name}</p>
+      <button className="addBtn" >+</button>
     </div>
   )
 }

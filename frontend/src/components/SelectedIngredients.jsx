@@ -1,9 +1,8 @@
-function SelectedIngredients(){
+import "./IngredientItem.css";
 
-    return(
-            <p>Hello</p>
-    )
-
+function SelectedIngredients() {
+  return (
+    <></>
+  )
 }
-
 export default SelectedIngredients;

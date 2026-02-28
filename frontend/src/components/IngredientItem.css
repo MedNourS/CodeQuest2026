@@ -7,3 +7,19 @@
   box-sizing: border-box;
   overflow-y: hidden;
 }
+
+.ingredientItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.addBtn {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+}

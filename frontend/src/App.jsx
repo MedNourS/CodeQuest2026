@@ -17,7 +17,9 @@ function App() {
     <>
       <Modal isOpen={isModalOpen} onClose={() => {setIsModalOpen(false)}}/>
       <div className="layout">
-
+      <head>
+        <title>MiNY Crave</title>
+      </head>
         <header className="header">
           <div className="headerLeft"></div>
               <img src={HorizontalLogo} alt="Horizontal Logo" className="logo" />

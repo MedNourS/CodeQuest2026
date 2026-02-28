@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import RecipeItem from "./RecipeItem";
 
-const searchIngredients = JSON.parse(localStorage.getItem("") || "[]");
+const searchIngredients = JSON.parse(localStorage.getItem("ingredienst") || "[]");
 
 // Delay function
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));

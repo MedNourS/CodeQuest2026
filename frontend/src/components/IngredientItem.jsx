@@ -1,23 +1,27 @@
 import './IngredientItem.css'
-import { useState } from 'react';
 
 function IngredientItem(props) {
+  const ingredientList = JSON.parse(localStorage.getItem('ingredients')) ?? [];
+  const isSelected = ingredientList.includes(props.name);
 
-  const addToLS = () => {
-    const ingredientList = JSON.parse(localStorage.getItem('ingredients'));
-    if (ingredientList == null){
-      localStorage.setItem('ingredients', JSON.stringify([props.name]));
-      ingredientList = [props.name];
+  const toggleItem = () => {
+    const ingredientList = JSON.parse(localStorage.getItem('ingredients')) ?? [];
+    if (isSelected) {
+      const updated = ingredientList.filter(item => item !== props.name);
+      localStorage.setItem('ingredients', JSON.stringify(updated));
+      props.setSelectedIngredients(updated);
+    } else {
+      if (ingredientList.includes(props.name)) return;
+      const updated = [...ingredientList, props.name];
+      localStorage.setItem('ingredients', JSON.stringify(updated));
+      props.setSelectedIngredients(updated);
     }
-    if(ingredientList.includes(props.name)) return;
-    localStorage.setItem('ingredients', JSON.stringify([...ingredientList, props.name]));
-    props.setSelectedIngredients([...ingredientList, props.name]);
   }
 
   return (
     <div className="ingredientItem">
       <p className="ingredientName">{props.name}</p>
-      <button className="addBtn" onClick={addToLS}><p>+</p></button>
+      <button className="addBtn" onClick={toggleItem}><p>{isSelected ? '-' : '+'}</p></button>
     </div>
   )
 }

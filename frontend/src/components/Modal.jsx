@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import "./Modal.css"
+import RecipeSection from "./RecipeSection";
 
 function Modal({ isOpen, onClose }) {
   const [closing, setClosing] = useState(false);
@@ -38,16 +39,7 @@ function Modal({ isOpen, onClose }) {
       aria-labelledby="modal-title"
     >
       <div className="modal">
-        <div className="modal-header">
-          <h2 className="modal-title" id="modal-title">Title</h2>
-          <button className="modal-close" onClick={handleClose} aria-label="Close">✕</button>
-        </div>
-
-        <div className="modal-divider" />
-
-        <div className="modal-footer">
-          <button className="btn-secondary" onClick={handleClose}>Cancel</button>
-        </div>
+        <RecipeSection />
       </div>
     </div>
   );

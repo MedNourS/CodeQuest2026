@@ -14,7 +14,9 @@ function App() {
   return (
     <>
       <div className="layout">
-
+      <head>
+        <title>MiNY Crave</title>
+      </head>
         <header className="header">
           <div className="headerLeft"></div>
               <img src={HorizontalLogo} alt="Horizontal Logo" className="logo" />

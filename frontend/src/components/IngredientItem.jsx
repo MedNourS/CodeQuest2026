@@ -1,8 +1,7 @@
 function IngredientItem(props) {
   return (
-    <div>
-      {props.name} <br/>
-      {props.details}
+    <div className="ingredientItem">
+      <p className="ingredientName">{props.name}</p>
     </div>
   )
 }

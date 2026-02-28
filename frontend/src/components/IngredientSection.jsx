@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import IngredientItem from "./IngredientItem";
+import "./IngredientSection.css";
 
 function IngredientSection() {
   const [ingredientsList, setIngredientList] = useState([]);
@@ -25,22 +26,22 @@ function IngredientSection() {
   }
 
   // useEffect(() => {
-  //   console.log(fetchFoodList("*"));
+  //   console.log(fetchFoodList("*")); <button onClick={() => console.log(fetchFoodList("*"))}>Click for IngredientsList</button>
   // }, []);
 
   return (
-    <div>
-      <button onClick={() => console.log(fetchFoodList("*"))}>Click for IngredientsList</button>
-      <input type="text" onChange={(e) => fetchFoodList(e)}></input><br/>
+    <div className="ingredientSectionWrapper">
+    <input type="text" className="ingredientSearch" onChange={(e) => fetchFoodList(e)} />
+    <div className="ingredientGrid">
       {ingredientsList != undefined ? ingredientsList.map((value, index) => (
-          <IngredientItem
-            key={index}
-            name={value.search_text_s.split(", ")[0]}
-            detail={value.search_text_s.split(", ").slice(1)}
-          />
-        )
-      ) : <div></div>}
+        <IngredientItem
+          key={index}
+          name={value.search_text_s.split(", ")[0]}
+          detail={value.search_text_s.split(", ").slice(1)}
+        />
+      )) : <div></div>}
     </div>
+  </div>
   );
 }
 

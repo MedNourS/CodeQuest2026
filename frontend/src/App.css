@@ -60,6 +60,30 @@ body {
   padding: 5vh;
 }
 
+.ingredientSection {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.ingredientSectionWrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.ingredientGrid {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 15%;
+  overflow-y: auto;
+  align-content: start;
+  justify-content: start;
+  flex: 1;
+}
+
 .rightPanel {
   flex: 1;
   display: flex;

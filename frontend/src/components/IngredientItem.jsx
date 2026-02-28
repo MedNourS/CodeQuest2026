@@ -1,7 +1,9 @@
-function IngredientItem({ name }) {
+import './IngredientItem.css'
+
+function IngredientItem(props) {
   return (
-    <div>
-      {name}
+    <div className="ingredientItem">
+      <p className="ingredientName">{props.name}</p>
     </div>
   )
 }

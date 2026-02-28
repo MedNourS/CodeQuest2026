@@ -2,11 +2,83 @@
   background-color: #78f4b5;
   height: 100vh;
   width: 100vw;
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+}
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 20px;
+}
+
+.headerLeft {
+  flex: 1;
+}
+
+.headerRight {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .logo {
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  width: 50%;
+  width: 45%;
+}
+
+.headerBtn {
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+.body {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  padding: 20px;
+  gap: 20px;
+  overflow: hidden;
+}
+
+.ingredientSection {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.ingredientSectionWrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.rightPanel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.selectedIngredients {
+  flex: 2;
+  padding: 5vh;
+}
+
+.utility {
+  flex: 1;
+  padding: 5vh;
 }

@@ -1,0 +1,9 @@
+.ingredientItem {
+  background-color: rgb(218, 255, 225);
+  border-radius: 8px;
+  padding: 22px 12px;
+  font-size: 0.85rem;
+  height: fit-content;
+  box-sizing: border-box;
+  overflow-y: hidden;
+}

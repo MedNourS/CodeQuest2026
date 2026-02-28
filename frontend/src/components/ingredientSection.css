@@ -1,0 +1,24 @@
+.ingredientGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5%;
+  overflow-y: auto;
+  align-content: start;
+  flex: 1;
+}
+
+.ingredientSearch{
+  margin-bottom: 10%;
+  border-radius: 20px;
+  padding: 8px 12px;
+  border: 1px solid black;
+  outline: none;
+}
+
+.ingredientSearch::placeholder{
+  text-align: center;
+}
+
+.ingredientName {
+  margin: 0;
+}

@@ -31,7 +31,7 @@ function IngredientSection() {
 
   return (
     <div className="ingredientSectionWrapper">
-    <input type="text" className="ingredientSearch" onChange={(e) => fetchFoodList(e)} />
+    <input type="text" className="ingredientSearch" placeholder="Search for Ingredients" onChange={(e) => fetchFoodList(e)} />
     <div className="ingredientGrid">
       {ingredientsList != undefined ? ingredientsList.map((value, index) => (
         <IngredientItem

@@ -24,6 +24,10 @@
   outline: none;
 }
 
+.ingredientSearch::placeholder{
+  text-align: center;
+}
+
 .ingredientName {
   margin: 0;
 }

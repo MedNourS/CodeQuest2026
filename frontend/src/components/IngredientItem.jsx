@@ -9,8 +9,8 @@ function IngredientItem(props) {
 
   return (
     <div className="ingredientItem">
-      <p className="ingredientName">{name}</p>
-      <button className="addBtn" >+</button>
+      <p className="ingredientName">{props.name}</p>
+      <button className="addBtn" ><p id="">+</p></button>
     </div>
   )
 }

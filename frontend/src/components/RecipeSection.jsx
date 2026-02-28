@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import RecipeItem from "./RecipeItem";
 
-const searchIngredients = ["salt", "vinegar", "potato", "bubblegum"];
+const searchIngredients = JSON.parse(localStorage.getItem("") || "[]");
 
 // Delay function
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
@@ -81,7 +81,6 @@ function RecipeSection() {
     }, []);
 
     if (loading) return <p>Searching for recipes, this may take a moment...</p>;
-    if (error) return <p>Error: {error}</p>;
     if (!recipes || recipes.length === 0) return <p>No recipes found.</p>;
 
     return (

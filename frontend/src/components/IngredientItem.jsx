@@ -1,3 +1,5 @@
+import './IngredientItem.css'
+
 function IngredientItem(props) {
   return (
     <div className="ingredientItem">

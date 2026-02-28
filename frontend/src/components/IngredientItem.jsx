@@ -1,7 +1,8 @@
-function IngredientItem({ name }) {
+function IngredientItem(props) {
   return (
     <div>
-      {name}
+      {props.name} <br/>
+      {props.details}
     </div>
   )
 }

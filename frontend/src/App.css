@@ -19,9 +19,11 @@ body {
 
 .header {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 15px 20px;
+  flex-direction: row;
+  padding: 24px 24px 0 24px;
+  gap: 20px;
+  align-items: flex-end;
+  margin-bottom: 20px;
 }
 
 .headerLeft {
@@ -32,20 +34,20 @@ body {
   flex: 1;
   display: flex;
   justify-content: flex-end;
+  padding-right: 20px;
 }
 
 .logo {
-  width: 45%;
+  width: 260px;
 }
 
 .headerBtn {
-  padding: 8px 24px;
+  padding: 10px 28px;
   border-radius: 999px;
-  margin-right: 3vw;
   background-color: rgb(203, 255, 216);
   border: none;
   cursor: pointer;
-  font-size: 2.3rem;
+  font-size: 1.8rem;
   font-weight: bold;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
   transition: box-shadow 0.2s;
@@ -88,7 +90,8 @@ body {
 
 .selectedIngredients {
   flex: 2;
-  padding: 5vh;
+  padding: 0;
+  overflow-y: auto;
 }
 
 .clearBtn {
@@ -98,7 +101,7 @@ body {
   border: none;
   cursor: pointer;
   font-size: 0.85rem;
-  margin-bottom: 10px;
+  margin: 0 0 15px;
 }
 
 .clearBtn:hover {
@@ -107,5 +110,61 @@ body {
 
 .utility {
   flex: 1;
-  padding: 5vh;
+  padding: 20px;
+}
+
+/* for phones */
+
+@media (max-width: 768px) {
+  .layout {
+    overflow-y: auto;
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px 16px 0 16px;
+    gap: 12px;
+  }
+
+  .headerLeft, .headerRight {
+    width: 100%;
+    justify-content: flex-start;
+    padding: 0;
+  }
+
+  .logo {
+    width: 160px;
+  }
+
+  .headerBtn {
+    font-size: 1.1rem;
+    padding: 8px 18px;
+  }
+
+  .body {
+    flex-direction: column;
+    padding: 16px;
+    gap: 16px;
+    overflow: visible;
+  }
+
+  .ingredientSection, .rightPanel {
+    width: 100%;
+    flex: none;
+  }
+
+  .ingredientSectionWrapper {
+    height: auto;
+  }
+
+  .ingredientGrid {
+    overflow-y: visible;
+  }
+
+  .selectedIngredients {
+    overflow-y: visible;
+  }
 }

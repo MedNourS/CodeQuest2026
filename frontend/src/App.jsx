@@ -1,13 +1,9 @@
 import { useState } from 'react'
-import MiNYLogo from '../public/logo.svg'
 import './App.css'
-import { distance } from 'fastest-levenshtein'
 import HorizontalLogo from "./assets/Horizontal_Logo.png"
 import SelectedIngredients from './components/SelectedIngredients'
 import IngredientSection from './components/IngredientSection'
-import Utility from './components/Utilitiy'
 import Modal from './components/Modal'
-
 
 function App() {
   const [selectedIngredients, setSelectedIngredients] = useState(JSON.parse(localStorage.getItem("ingredients")))
@@ -17,27 +13,24 @@ function App() {
     <>
       <Modal isOpen={isModalOpen} onClose={() => {setIsModalOpen(false)}} selectedIngredients={selectedIngredients}/>
       <div className="layout">
-      <head>
-        <title>MiNY Crave</title>
-      </head>
         <header className="header">
-          <div className="headerLeft"></div>
-              <img src={HorizontalLogo} alt="Horizontal Logo" className="logo" />
+          <div className="headerLeft">
+            <img src={HorizontalLogo} alt="Horizontal Logo" className="logo" />
+          </div>
           <div className="headerRight">
-            <button className="headerBtn" onClick={() => {
-              setIsModalOpen(true)
-            }}>Get Recipes!</button>
-      </div>
+            <button className="headerBtn" onClick={() => setIsModalOpen(true)}>Get Recipes!</button>
+          </div>
         </header>
-
         <div className="body">
-          <div className="ingredientSection"><IngredientSection setSelectedIngredients={setSelectedIngredients}/></div>
+          <div className="ingredientSection">
+            <IngredientSection setSelectedIngredients={setSelectedIngredients}/>
+          </div>
           <div className="rightPanel">
-            <div className="selectedIngredients"><SelectedIngredients setSelectedIngredients={setSelectedIngredients}/></div>
-            <div className="utility"><Utility /> </div>
+            <div className="selectedIngredients">
+              <SelectedIngredients setSelectedIngredients={setSelectedIngredients}/>
+            </div>
           </div>
         </div>
-
       </div>
     </>
   )

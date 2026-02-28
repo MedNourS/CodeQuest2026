@@ -9,6 +9,7 @@ import Utility from './components/Utilitiy'
 
 
 function App() {
+  const [selectedIngredients, setSelectedIngredients] = useState(JSON.parse(localStorage.getItem("ingredients")))
 
   return (
     <>
@@ -23,9 +24,9 @@ function App() {
         </header>
 
         <div className="body">
-          <div className="ingredientSection"><IngredientSection /></div>
+          <div className="ingredientSection"><IngredientSection setSelectedIngredients={setSelectedIngredients}/></div>
           <div className="rightPanel">
-            <div className="selectedIngredients"><SelectedIngredients /></div>
+            <div className="selectedIngredients"><SelectedIngredients setSelectedIngredients={setSelectedIngredients}/></div>
             <div className="utility"><Utility /> </div>
           </div>
         </div>

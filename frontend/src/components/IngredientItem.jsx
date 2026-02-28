@@ -2,7 +2,6 @@ import './IngredientItem.css'
 import { useState } from 'react';
 
 function IngredientItem(props) {
-  const [render, setRender] = useState(0);
 
   const addToLS = () => {
     const ingredientList = JSON.parse(localStorage.getItem('ingredients'));
@@ -12,7 +11,7 @@ function IngredientItem(props) {
     }
     if(ingredientList.includes(props.name)) return;
     localStorage.setItem('ingredients', JSON.stringify([...ingredientList, props.name]));
-    setRender(render + 1);
+    props.setSelectedIngredients([...ingredientList, props.name]);
   }
 
   return (

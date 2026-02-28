@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import IngredientItem from "./IngredientItem";
 import "./ingredientSection.css"
 
-function IngredientSection() {
+function IngredientSection(props) {
   const numResults = 10;
   const [ingredientsList, setIngredientList] = useState([]);
   const [inputValue, setInputValue] = useState("");
@@ -66,6 +66,7 @@ function IngredientSection() {
           <IngredientItem
             key={index}
             name={value}
+            setSelectedIngredients={props.setSelectedIngredients}
           />
         )
       ) : <div></div>}

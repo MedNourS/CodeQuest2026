@@ -3,7 +3,6 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import { distance } from 'fastest-levenshtein'
-import FoodItem from "./components/FoodSection"
 import IngredientSection from './components/IngredientSection'
 
 function App() {

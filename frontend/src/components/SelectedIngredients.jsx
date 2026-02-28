@@ -7,7 +7,7 @@ function SelectedIngredients(props){
     return(
         <div className="ingredientGrid">
             {ingredients != null ? ingredients.map((value, index) => (
-                <IngredientItem name={value} setSelectedIngredients={props.setSelectedIngredients}/>
+                <IngredientItem key={index} name={value} setSelectedIngredients={props.setSelectedIngredients}/>
             )): <></>}
         </div>
     );

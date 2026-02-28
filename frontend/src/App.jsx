@@ -11,6 +11,10 @@ function App() {
 
   return (
     <>
+      <head>
+        <title>MiNY Crave</title>
+      </head>
+
       <Modal isOpen={isModalOpen} onClose={() => {setIsModalOpen(false)}} selectedIngredients={selectedIngredients}/>
       <div className="layout">
         <header className="header">

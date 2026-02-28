@@ -18,7 +18,7 @@ function IngredientItem(props) {
   return (
     <div className="ingredientItem">
       <p className="ingredientName">{props.name}</p>
-      <button className="addBtn" onClick={addToLS}>+</button>
+      <button className="addBtn" onClick={addToLS}><p>+</p></button>
     </div>
   )
 }

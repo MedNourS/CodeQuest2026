@@ -1,25 +1,36 @@
 .ingredientItem {
   background-color: rgb(218, 255, 225);
   border-radius: 8px;
-  padding: 22px 12px;
+  padding: 6px 10px;
   font-size: 0.85rem;
   height: fit-content;
   box-sizing: border-box;
-  overflow-y: hidden;
-}
-
-.ingredientItem {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 8px;
+}
+
+.ingredientName {
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .addBtn {
   background: none;
   border: none;
-  font-size: 1.2rem;
   cursor: pointer;
-  padding: 0;
-  line-height: 1;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #2a9d6e;
+  padding: 0 0 0 8px;
+}
+
+.addBtn:hover {
+  color: #1a7a50;
+}
+
+.addBtn p {
+  margin: 0;
 }

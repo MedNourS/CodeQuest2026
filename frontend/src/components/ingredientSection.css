@@ -1,8 +1,8 @@
 .ingredientGrid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1%;
-  overflow-y: auto;
+  gap: 10px;
+  overflow-y: hidden;
   align-content: start;
   flex: 1;
 }

@@ -18,7 +18,7 @@ function App() {
           <div className="headerLeft"></div>
               <img src={HorizontalLogo} alt="Horizontal Logo" className="logo" />
           <div className="headerRight">
-            <button className="headerBtn">Click Me</button>
+            <button className="headerBtn">Get Recipes!</button>
       </div>
         </header>
 

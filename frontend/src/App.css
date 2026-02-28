@@ -4,9 +4,47 @@
   width: 100vw;
 }
 
+.layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.header {
+  padding: 15px 20px;
+}
+
 .logo {
-  position: fixed;
-  top: 20px;
-  left: 20px;
   width: 50%;
+}
+
+.body {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  overflow: hidden;
+  padding: 20px;
+  gap: 20px;
+}
+
+.ingredientSection {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.rightPanel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.selectedIngredients {
+  flex: 2;
+  overflow-y: auto;
+}
+
+.utility {
+  flex: 1;
+  overflow-y: auto;
 }

@@ -1,16 +1,17 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import MiNYLogo from '../public/logo.svg'
 import './App.css'
 import { distance } from 'fastest-levenshtein'
 import FoodItem from "./components/FoodSection"
 import FoodSection from './components/FoodSection'
+import HorizontalLogo from "./assets/Horizontal_Logo.png"
+import SelectedIngredients from './components/SelectedIngredients'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
+      {SelectedIngredients}
+      <img src={HorizontalLogo} alt="Horizontal Logo" className="logo"></img>
       <p>distance between food and fast is: {distance("food", "fast")}</p>
       <FoodSection/>
     </>

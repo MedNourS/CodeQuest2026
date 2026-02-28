@@ -7,15 +7,6 @@
   flex: 1;
 }
 
-.ingredientItem {
-  background-color: rgb(218, 255, 225);
-  border-radius: 8px;
-  padding: 8px 12px;
-  font-size: 0.85rem;
-  height: fit-content;
-  box-sizing: border-box;
-}
-
 .ingredientSearch{
   margin-bottom: 10%;
   border-radius: 20px;

@@ -66,42 +66,6 @@ body {
   width: 100%;
 }
 
-.ingredientGrid {
-  display: grid;
-  grid-template-columns: repeat(2, max-content);
-  gap: 10px;
-  overflow-y: auto;
-  align-content: start;
-  flex: 1;
-}
-
-.ingredientItem {
-  background-color: rgb(218, 255, 225);
-  border-radius: 8px;
-  padding: 6px 10px;
-  font-size: 0.85rem;
-  cursor: pointer;
-}
-
-.ingredientName {
-  margin: 0;
-  white-space: nowrap;
-}
-
-.ingredientSearch {
-  margin-bottom: 10px;
-  padding: 8px 12px;
-  border-radius: 20px;
-  border: 1px solid #ccc;
-  outline: none;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-.ingredientSearch::placeholder {
-  color: #aaa;
-}
-
 .rightPanel {
   flex: 1;
   display: flex;

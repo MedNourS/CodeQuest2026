@@ -1,12 +1,9 @@
-.div{
-  border: black solid 5px;
-  padding: 10px;
-}
-
 .ingredientItem {
-  background-color: white;
+  background-color: rgb(218, 255, 225);
   border-radius: 8px;
-  padding: 10px;
+  padding: 22px 12px;
   font-size: 0.85rem;
-  cursor: pointer;
+  height: fit-content;
+  box-sizing: border-box;
+  overflow-y: hidden;
 }
